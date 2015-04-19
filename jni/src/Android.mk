@@ -1,0 +1,16 @@
+#local module
+
+LOCAL_PATH:=$(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := util
+
+LOCAL_SRC_FILES:= util.cc
+
+LOCAL_EXPORT_C_INCLUDES = $(LOCAL_PATH)
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)
+
+LOCAL_EXPORT_LDLIBS := -L$(SYSROOT)/usr/lib -llog 
+
+include $(BUILD_STATIC_LIBRARY)
